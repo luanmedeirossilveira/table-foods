@@ -3,7 +3,10 @@
     <ul>
         <li 
         v-for="(food, index) in foods"
-        :key="`${food}-${index}`">{{ food }}</li>
+        :key="`${food}-${index}`">
+            {{ food }}
+        </li>
+        
     </ul>
   </div>
 </template>
@@ -21,12 +24,15 @@ export default {
             if(this.foods.length === MAX_FOODS){
                 this.$emit('stop', 'Sua cesta está cheia!!')
             }
-            
         }
     }
 }
 </script>
 
 <style>
-
+ul{
+    justify-content: space-between;
+    flex-direction: column;
+    display: flex;
+}
 </style>

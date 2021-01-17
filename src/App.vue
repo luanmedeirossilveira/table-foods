@@ -14,7 +14,13 @@
     id="btn_reset"
     @click="reseta">
     Resetar
-  </button><br>
+  </button>
+  <button 
+    class="exclui" 
+    @click="exclui">
+    Excluir
+  </button>
+  <br>
   <food-list 
     @stop="handleStop"
     :foods="foods"/>
@@ -43,6 +49,9 @@ export default {
     },
     reseta () {
       window.location.reload()
+    },
+    exclui () {
+      this.foods.pop()
     }
   }
 }
@@ -58,7 +67,6 @@ body{
 }
 #box{
   padding: 50px;
-  text-align: center;
 }
 input{
   width: 200px;
@@ -125,5 +133,10 @@ ul li:last-child{
   padding: 20px;
   border-bottom: none;
   color: #EE8434;
+}
+.exclui{
+    border: 1px solid #3066BE;
+    background-color: transparent;
+    color: #3066BE;
 }
 </style>
