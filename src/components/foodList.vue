@@ -1,11 +1,11 @@
 <template>
   <div class="box_list">
     <ul>
-        <!-- <li 
+        <li 
         v-for="(food, index) in foods"
         :key="`${food}-${index}`">
             {{ food }}
-        </li> -->
+        </li>
         <li
         v-for="(price, index) in prices"
         :key="`${price}-${index}`"
