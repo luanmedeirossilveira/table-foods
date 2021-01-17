@@ -12,7 +12,7 @@
 </template>
 
 <script>
-const MAX_FOODS = 5
+const MAX_FOODS = 20
 export default {
     props: {
         foods: {

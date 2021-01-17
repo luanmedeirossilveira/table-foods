@@ -44,7 +44,10 @@ export default {
       document.getElementById("input").disabled = true
     },
     addFood () {
-      this.foods.push(this.currentFood)
+      if(this.currentFood != "")
+        this.foods.push(this.currentFood)
+      else
+        alert("Campo vazio!")
       this.currentFood = ''
     },
     reseta () {
