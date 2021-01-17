@@ -5,7 +5,11 @@
     @keyup.enter="addFood"
     type="text" 
     v-model="currentFood"
-    placeholder="Coloque Aqui!">
+    placeholder="Coloque Aqui!" />
+  <input 
+    type="text" 
+    v-model="currentPrices"
+    placeholder="Coloque Valor!" />
   <button 
     @click="addFood">
     Adicionar
@@ -34,8 +38,10 @@ export default {
   components: { FoodList },
   data: () => ({
     currentFood: "",
+    currentPrices: "",
     link: "http://www.g1.globo.com",
-    foods: ['Maçã', 'Pera']
+    foods: ['Maçã', 'Pera'],
+    prices: [5, 2]
   }),
   methods: {
     handleStop (payload) {
@@ -44,11 +50,14 @@ export default {
       document.getElementById("input").disabled = true
     },
     addFood () {
-      if(this.currentFood != "")
+      if(this.currentFood != ""){
         this.foods.push(this.currentFood)
-      else
+        alert(this.currentPrices)
+        this.prices.push(this.currentPrices)
+      }else
         alert("Campo vazio!")
       this.currentFood = ''
+      this.currentPrices = ''
     },
     reseta () {
       window.location.reload()

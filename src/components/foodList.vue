@@ -1,12 +1,17 @@
 <template>
   <div class="box_list">
     <ul>
-        <li 
+        <!-- <li 
         v-for="(food, index) in foods"
         :key="`${food}-${index}`">
             {{ food }}
+        </li> -->
+        <li
+        v-for="(price, index) in prices"
+        :key="`${price}-${index}`"
+        >
+            {{ price }}
         </li>
-        
     </ul>
   </div>
 </template>
@@ -16,6 +21,9 @@ const MAX_FOODS = 20
 export default {
     props: {
         foods: {
+            type: Array, default: () => []
+        },
+        prices: {
             type: Array, default: () => []
         }
     },
